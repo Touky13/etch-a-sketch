@@ -3,13 +3,13 @@ const sizeBtn = document.querySelector ("button");
 
 for (let i = 0; i < 256; i += 1) {
     const gridSquare = document.createElement ("gridSquare");
-    let squareWidth = 500 / 16;
+    let squareWidth = 480 / 16;
     gridSquare.style.height = `${squareWidth}px`;
     gridSquare.style.width = `${squareWidth}px`;
     grid.appendChild(gridSquare);
 
     gridSquare.addEventListener ("mouseenter", (e) => {
-        gridSquare.style.background = "blue";
+        gridSquare.style.background = "black";
     });
 }
 
@@ -31,13 +31,13 @@ sizeBtn.addEventListener ("click", () => {
 
     for (let i = 0; i < userGridSize** 2; i += 1) {
         const gridSquare = document.createElement ("gridSquare");
-        let squareWidth = 500 / userGridSize;
+        let squareWidth = 480 / userGridSize;
         gridSquare.style.height = `${squareWidth}px`;
         gridSquare.style.width = `${squareWidth}px`;    
         grid.appendChild(gridSquare);
     
         gridSquare.addEventListener ("mouseenter", (e) => {
-            gridSquare.style.background = "blue";
+            gridSquare.style.background = "black";
         });
     }
 })
