@@ -37,10 +37,3 @@ sizeBtn.addEventListener ("click", () => {
         });
     }
 })
-    
-
-
-/* Create grid by user input
-try to use a loop in a function
-to create new elements via js
-*/
