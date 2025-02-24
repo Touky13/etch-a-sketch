@@ -1,7 +1,7 @@
 const grid = document.querySelector (".grid");
 const sizeBtn = document.querySelector ("#gridSize");
 
-let backgroundColor = randomRgb();
+let opacity = 0;
 
 for (let i = 0; i < 256; i += 1) {
     const gridSquare = document.createElement ("gridSquare");
@@ -10,9 +10,14 @@ for (let i = 0; i < 256; i += 1) {
     gridSquare.style.width = `${squareWidth}px`;
     grid.appendChild(gridSquare);
 
+    const randColor = () => {
+        let rgb = () => Math.floor(Math.random() * 255);
+        return `rgb(${rgb()}, ${rgb()}, ${rgb()})`;
+    }
     gridSquare.addEventListener ("mouseenter", (e) => {
-        gridSquare.style.background = backgroundColor;
-        console.log(backgroundColor);
+        gridSquare.style.background = randColor();
+        e.target.style.opacity = Math.min(+e.target.style.opacity + 0.1, 1.0);
+        console.log(e.target.style.opacity);
     });
 }
 
