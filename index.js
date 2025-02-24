@@ -24,8 +24,11 @@ for (let i = 0; i < 256; i += 1) {
 
 sizeBtn.addEventListener ("click", () => {
     function getGridSize () {
-        const gridSize = prompt ("Please enter the size of the grid (between 1-100 squares included).")
-        if (gridSize > 100 || gridSize < 1) {
+        const gridSize = parseInt(prompt ("Please enter the size of the grid (between 1-100 squares included)."))
+        console.log(gridSize)
+        console.log(typeof gridSize)
+        if (gridSize >= 1 && gridSize <= 100) {
+        } else {
             alert("Input invalid!\nPlease choose a valid number.");
             return getGridSize();
         }
