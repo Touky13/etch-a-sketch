@@ -1,5 +1,7 @@
 const grid = document.querySelector (".grid");
-const sizeBtn = document.querySelector ("button");
+const sizeBtn = document.querySelector ("#gridSize");
+
+let backgroundColor = randomRgb();
 
 for (let i = 0; i < 256; i += 1) {
     const gridSquare = document.createElement ("gridSquare");
@@ -9,7 +11,8 @@ for (let i = 0; i < 256; i += 1) {
     grid.appendChild(gridSquare);
 
     gridSquare.addEventListener ("mouseenter", (e) => {
-        gridSquare.style.background = "black";
+        gridSquare.style.background = backgroundColor;
+        console.log(backgroundColor);
     });
 }
 
@@ -20,7 +23,6 @@ sizeBtn.addEventListener ("click", () => {
             alert("The grid is too big!\nPlease choose a smaller number.");
             return getGridSize();
         }
-        console.log(gridSize);
         while (grid.firstChild) {
             grid.removeChild(grid.firstChild);
         }
@@ -37,7 +39,12 @@ sizeBtn.addEventListener ("click", () => {
         grid.appendChild(gridSquare);
     
         gridSquare.addEventListener ("mouseenter", (e) => {
-            gridSquare.style.background = "black";
+            gridSquare.style.background = backgroundColor;
         });
     }
 })
+
+function randomRgb () {
+    let rgb = () => Math.floor(Math.random() * 255);
+    return `rgb(${rgb()}, ${rgb()}, ${rgb()})`;
+}
