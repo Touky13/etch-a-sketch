@@ -18,6 +18,9 @@ sizeBtn.addEventListener ("click", () => {
             return getGridSize();
         }
         console.log(gridSize);
+        while (grid.firstChild) {
+            grid.removeChild(grid.firstChild);
+        }
         return gridSize;
     }
 
@@ -25,9 +28,7 @@ sizeBtn.addEventListener ("click", () => {
     console.log(userGridSize);
 
     for (let i = 0; i < userGridSize; i += 1) {
-        while (grid.firstChild) {
-            grid.removeChild(grid.firstChild);
-        }
+
         const gridSquare = document.createElement ("gridSquare");
         grid.appendChild(gridSquare);
     
