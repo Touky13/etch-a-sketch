@@ -6,6 +6,7 @@ body {
     min-height: 100vh;
     width: auto;
     margin: 0px;
+    background-color: beige;
 }
 
 
@@ -16,6 +17,7 @@ body {
     border: 2px solid black;
     height: 480px;
     width: 480px;
+    background-color: white;
 }
 
 button {
