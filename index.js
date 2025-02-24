@@ -14,6 +14,7 @@ for (let i = 0; i < 256; i += 1) {
         let rgb = () => Math.floor(Math.random() * 255);
         return `rgb(${rgb()}, ${rgb()}, ${rgb()})`;
     }
+
     gridSquare.addEventListener ("mouseenter", (e) => {
         gridSquare.style.background = randColor();
         e.target.style.opacity = Math.min(+e.target.style.opacity + 0.1, 1.0);
@@ -23,9 +24,9 @@ for (let i = 0; i < 256; i += 1) {
 
 sizeBtn.addEventListener ("click", () => {
     function getGridSize () {
-        const gridSize = prompt ("Please enter the size of the grid (below 100 squares).")
-        if (gridSize > 100) {
-            alert("The grid is too big!\nPlease choose a smaller number.");
+        const gridSize = prompt ("Please enter the size of the grid (between 1-100 squares included).")
+        if (gridSize > 100 || gridSize < 1) {
+            alert("Input invalid!\nPlease choose a valid number.");
             return getGridSize();
         }
         while (grid.firstChild) {
@@ -42,9 +43,16 @@ sizeBtn.addEventListener ("click", () => {
         gridSquare.style.height = `${squareWidth}px`;
         gridSquare.style.width = `${squareWidth}px`;    
         grid.appendChild(gridSquare);
-    
+
+        const randColor = () => {
+            let rgb = () => Math.floor(Math.random() * 255);
+            return `rgb(${rgb()}, ${rgb()}, ${rgb()})`;
+        }    
+
         gridSquare.addEventListener ("mouseenter", (e) => {
-            gridSquare.style.background = backgroundColor;
+            gridSquare.style.background = randColor();
+            e.target.style.opacity = Math.min(+e.target.style.opacity + 0.1, 1.0);
+            console.log(e.target.style.opacity);    
         });
     }
 })
