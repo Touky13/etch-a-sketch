@@ -1,8 +1,6 @@
 const grid = document.querySelector (".grid");
 const sizeBtn = document.querySelector ("#gridSize");
 
-let opacity = 0;
-
 for (let i = 0; i < 256; i += 1) {
     const gridSquare = document.createElement ("gridSquare");
     let squareWidth = 480 / 16;
@@ -18,15 +16,12 @@ for (let i = 0; i < 256; i += 1) {
     gridSquare.addEventListener ("mouseenter", (e) => {
         gridSquare.style.background = randColor();
         e.target.style.opacity = Math.min(+e.target.style.opacity + 0.1, 1.0);
-        console.log(e.target.style.opacity);
     });
 }
 
 sizeBtn.addEventListener ("click", () => {
     function getGridSize () {
         const gridSize = parseInt(prompt ("Please enter the size of the grid (between 1-100 squares included)."))
-        console.log(gridSize)
-        console.log(typeof gridSize)
         if (gridSize >= 1 && gridSize <= 100) {
         } else {
             alert("Input invalid!\nPlease choose a valid number.");
@@ -55,7 +50,6 @@ sizeBtn.addEventListener ("click", () => {
         gridSquare.addEventListener ("mouseenter", (e) => {
             gridSquare.style.background = randColor();
             e.target.style.opacity = Math.min(+e.target.style.opacity + 0.1, 1.0);
-            console.log(e.target.style.opacity);    
         });
     }
 })
