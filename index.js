@@ -15,7 +15,7 @@ for (let i = 0; i < 256; i += 1) {
 
 sizeBtn.addEventListener ("click", () => {
     function getGridSize () {
-        const gridSize = prompt ("Please enter the size of the grid.")
+        const gridSize = prompt ("Please enter the size of the grid (below 100 squares).")
         if (gridSize > 100) {
             alert("The grid is too big!\nPlease choose a smaller number.");
             return getGridSize();
