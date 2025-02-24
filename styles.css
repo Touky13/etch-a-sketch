@@ -14,8 +14,8 @@ body {
     flex-flow: wrap;
     margin: 0px;
     border: 2px solid black;
-    height: 500px;
-    width: 500px;
+    height: 480px;
+    width: 480px;
 }
 
 gridSquare {
